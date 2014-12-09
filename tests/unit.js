@@ -1,13 +1,34 @@
-describe('factory: security.session', function () {
+describe('jstool-scope: Scope', function () {
 
-	var parsed;
+	var s1, s2, s3;
 
 	beforeEach(function () {
-		parsed = css('article#item-id.parent.element[data-some="attribute"] section.post a.link');
+		s1 = new Scope({ foo: 'bar', overlap: 'v1', obj: { value: 'pristine' } });
+		s2 = s1.$new({ overlap: 'v2' });
+
+		s3 = s2.$new();
+		s3.foo = 'changed';
+
+		s3.obj.value = 'dirty';
 	});
 
-	it('test html parser', function () {
-		expect( parsed.toHTML() )
-			.toBe('<article id="item-id" class="parent element" data-some="attribute"><section class="post"><a class="link"></a></section></article>');
+	it('test scope level 1', function () {
+		expect(s1.foo).toBe('bar');
+	});
+
+	it('test scope level 1 overlap', function () {
+		expect(s1.overlap).toBe('v1');
+	});
+
+	it('test scope level 1 dirty', function () {
+		expect(s1.obj.value).toBe('dirty');
+	});
+
+	it('test scope level 2 overlap', function () {
+		expect(s2.overlap).toBe('v2');
+	});
+
+	it('test scope level 3 foo', function () {
+		expect(s3.foo).toBe('changed');
 	});
 });
