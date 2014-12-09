@@ -1,4 +1,4 @@
-jstool-css
+jstool-scope
 ============
 
-[![npm version](https://badge.fury.io/js/jstool-css.svg)](http://badge.fury.io/js/jstool-css) [![Build Status](https://travis-ci.org/jstools/css.js.svg?branch=master)](https://travis-ci.org/jstools/css.js) 
+[![npm version](https://badge.fury.io/js/jstool-scope.svg)](http://badge.fury.io/js/jstool-scope) [![Build Status](https://travis-ci.org/jstools/scope.js.svg?branch=master)](https://travis-ci.org/jstools/scope.js) 
