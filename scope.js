@@ -43,26 +43,29 @@
 
 })(function () {
 	'use strict';
-    function Scope (scp) {
-        for( var key in scp ) {
-            this[key] = scp[key];
+
+    function _copy (target, source) {
+        for( var key in source ) {
+            target[key] = source[key];
         }
     }
 
-    function newScope (scp) {
-        function S (scp) {
-            for( var key in scp ) {
-                this[key] = scp[key];
-            }
-        }
-        S.prototype = this;
-        for( var key in Scope.prototype ) {
-            S.prototype[key] = Scope.prototype[key];
-        }
-        return new S(scp);
+    function Scope (options) {
+        _copy(this, options);
     }
 
-    Scope.prototype.$new = newScope;
+    Scope.prototype.itself = function () {
+        return this;
+    };
+
+    Scope.prototype.$new = function (options) {
+        var S = function S () {
+            _copy(this, options);
+        };
+        S.prototype = this.itself();
+        _copy(S.prototype, Scope.prototype);
+        return new S();
+    };
 
     return Scope;
 });

@@ -56,7 +56,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'modules/**/*.js']
+      all: ['Gruntfile.js', '<%= pkg.main %>']
     }
   });
 
