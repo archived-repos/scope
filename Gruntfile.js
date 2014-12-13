@@ -1,6 +1,6 @@
-'use strict';
 
 module.exports = function(grunt) {
+  'use strict';
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -47,13 +47,16 @@ module.exports = function(grunt) {
         src: [
           '<%= pkg.main %>'
         ],
-        dest: '<%= pkg.main.replace(/\.js$/, \'.min.js\') %>'
+        dest: '<%= pkg.main.replace(/\\.js$/, \'.min.js\') %>'
       }
     },
     karma: {
       unit: {
         configFile: 'karma.conf.js'
       }
+    },
+    jshint: {
+      all: ['Gruntfile.js', 'modules/**/*.js']
     }
   });
 
@@ -61,6 +64,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('publish', [ 'uglify:min', 'increase-version', 'git:increase-version', 'shell:npm-publish' ]);
 
-  grunt.registerTask('test', [ 'karma' ]);
+  grunt.registerTask('test', [ 'jshint', 'karma' ]);
 
 };
