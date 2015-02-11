@@ -44,27 +44,25 @@
 })(function () {
 	'use strict';
 
-    function _copy (target, source) {
-        for( var key in source ) {
-            target[key] = source[key];
+    var Scope = function (data) {
+        if( data instanceof Object ) {
+            this.extend(data);
         }
-    }
-
-    function Scope (options) {
-        _copy(this, options);
-    }
-
-    Scope.prototype.itself = function () {
-        return this;
     };
 
-    Scope.prototype.$new = function (options) {
-        var S = function S () {
-            _copy(this, options);
+    Scope.prototype.new = function(data) {
+        var S = function () {
+            this.extend(data);
         };
-        S.prototype = this.itself();
-        _copy(S.prototype, Scope.prototype);
-        return new S();
+        S.prototype = this;
+        return new S(data);
+    };
+
+    Scope.prototype.extend = function(data) {
+        for( var key in data ) {
+            this[key] = data[key];
+        }
+        return this;
     };
 
     return Scope;

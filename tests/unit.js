@@ -4,9 +4,9 @@ describe('jstool-scope: Scope', function () {
 
 	beforeEach(function () {
 		s1 = new Scope({ foo: 'bar', overlap: 'v1', obj: { value: 'pristine' } });
-		s2 = s1.$new({ overlap: 'v2' });
+		s2 = s1.new({ overlap: 'v2' });
 
-		s3 = s2.$new();
+		s3 = s2.new();
 		s3.foo = 'changed';
 
 		s3.obj.value = 'dirty';
