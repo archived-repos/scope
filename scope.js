@@ -44,25 +44,35 @@
 })(function () {
 	'use strict';
 
+    function parseExpression (expression) {
+        /* jshint ignore:start */
+        return (new Function('model', 'try{ with(model) { return (' + expression + ') }; } catch(err) { return \'\'; }'));
+        /* jshint ignore:end */
+    }
+
     var Scope = function (data) {
         if( data instanceof Object ) {
-            this.extend(data);
+            this.$$extend(data);
         }
     };
 
-    Scope.prototype.new = function(data) {
+    Scope.prototype.$$new = function(data) {
         var S = function () {
-            this.extend(data);
+            this.$$extend(data);
         };
         S.prototype = this;
         return new S(data);
     };
 
-    Scope.prototype.extend = function(data) {
+    Scope.prototype.$$extend = function(data) {
         for( var key in data ) {
             this[key] = data[key];
         }
         return this;
+    };
+
+    Scope.prototype.$$eval = function ( expression ) {
+        return parseExpression(expression)(this);
     };
 
     return Scope;
