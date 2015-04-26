@@ -1,8 +1,8 @@
 {
-    "name": "jstool-scope",
+    "name": "jn-scope",
     "main": "scope.js",
     "version": "0.0.8",
-    "homepage": "https://github.com/jstools/jstool-scope",
+    "homepage": "https://github.com/jstools/jn-scope",
     "authors": [
         "Jesús Germade <jesus@germade.es>"
     ],
