@@ -1,5 +1,5 @@
 {
-    "name": "jn-scope",
+    "name": "jstools-scope",
     "version": "0.0.8",
     "description": "scope jstool example",
     "main": "scope.js",
@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/jstools/jn-scope.git"
+        "url": "https://github.com/jstools/scope.git"
     },
     "keywords": [
         "javascript",
@@ -19,9 +19,9 @@
     "author": "Jesús Manuel Germade Castiñeiras <jesus@germade.es>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/jstools/jn-scope/issues"
+        "url": "https://github.com/jstools/scope/issues"
     },
-    "homepage": "https://github.com/jstools/jn-scope",
+    "homepage": "https://github.com/jstools/scope",
     "devDependencies": {
         "grunt": "^0.4.5",
         "grunt-contrib-jshint": "^0.10.0",
