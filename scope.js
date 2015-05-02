@@ -26,16 +26,20 @@
  */
 
 
-(function (root, definition) {
+(function (root, factory) {
 	'use strict';
 
 	if ( typeof module !== 'undefined' ) {
-		module.exports = definition();
+		module.exports = factory();
 	} else {
 		if ( root.define ) {
-			define('Scope', definition );
+			define('Scope', factory );
+		} else if ( root.angular ) {
+				var Scope = factory();
+				angular.module('jstools.scope', [])
+					.factory('Scope', factory);
 		} else if( !root.Scope ) {
-			root.Scope = definition();
+			root.Scope = factory();
 		}
 	}
 

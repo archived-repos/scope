@@ -1,6 +1,6 @@
 {
     "name": "jstools-scope",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "scope jstool example",
     "main": "scope.js",
     "scripts": {
