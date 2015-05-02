@@ -1,4 +1,4 @@
-jEngine: Scope
+jEngine: Scope [![wercker status](https://app.wercker.com/status/5171150383b23595c99e25435ccb0135/s "wercker status")](https://app.wercker.com/project/bykey/5171150383b23595c99e25435ccb0135)
 ================
 [![Bower version](https://badge.fury.io/bo/jstools-scope.svg)](http://badge.fury.io/bo/jstools-scope)
 [![npm version](https://badge.fury.io/js/jstools-scope.svg)](http://badge.fury.io/js/jstools-scope)
