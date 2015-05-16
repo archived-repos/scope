@@ -1,16 +1,16 @@
 jEngine: Scope [![wercker status](https://app.wercker.com/status/5171150383b23595c99e25435ccb0135/s "wercker status")](https://app.wercker.com/project/bykey/5171150383b23595c99e25435ccb0135)
 ================
-[![Bower version](https://badge.fury.io/bo/jstools-scope.svg)](http://badge.fury.io/bo/jstools-scope)
-[![npm version](https://badge.fury.io/js/jstools-scope.svg)](http://badge.fury.io/js/jstools-scope)
+[![Bower version](https://badge.fury.io/bo/jengine-scope.svg)](http://badge.fury.io/bo/jengine-scope)
+[![npm version](https://badge.fury.io/js/jengine-scope.svg)](http://badge.fury.io/js/jengine-scope)
 [![Build Status](https://travis-ci.org/jstools/scope.svg?branch=master)](https://travis-ci.org/jstools/scope)
 Installation
 ------------
 ```.sh
-npm install jstools-scope --save
+npm install jengine-scope --save
 ```
   or
 ```.sh
-bower install jstools-scope --save
+bower install jengine-scope --save
 ```
 Usage
 -----
